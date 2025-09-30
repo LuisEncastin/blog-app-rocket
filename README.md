@@ -5,6 +5,8 @@ A full-stack blog application developed with React + Vite + Tailwind CSS (fronte
 > **Technical Assessment Project** for Rocket Code  
 > This project was created as a response to Rocket Code's technical assessment for a React Developer position.
 
+![Blog app image](assets/screenshot.png)
+
 ## 📋 Project Requirements Fulfilled
 
 This application meets all the requirements specified in the technical assessment:
