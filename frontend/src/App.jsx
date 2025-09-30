@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Plus } from 'lucide-react';
 import Header from './components/Header';
-//import SearchBar from './components/SearchBar';
+import SearchBar from './components/SearchBar';
 import ConnectionStatus from './components/ConnectionStatus';
 import PostList from './components/PostList';
 import PostDetail from './components/PostDetail';
