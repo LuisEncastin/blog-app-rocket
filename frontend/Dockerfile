@@ -2,17 +2,17 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copiar archivos de dependencias
+# Copy dependencies files
 COPY package*.json ./
 
-# Instalar dependencias
+# Install dependencies
 RUN npm install
 
-# Copiar el resto del código
+# Copy the rest of the code
 COPY . .
 
-# Exponer el puerto de Vite
+# Exponse the port vite
 EXPOSE 5173
 
-# Comando por defecto
+# Default commands
 CMD ["npm", "run", "dev"]

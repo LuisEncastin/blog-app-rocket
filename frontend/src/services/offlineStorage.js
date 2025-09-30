@@ -7,7 +7,7 @@ class OfflineStorage {
         posts,
         timestamp: new Date().toISOString()
       };
-      // Usar variables en memoria en lugar de localStorage
+      // Use memory variables instead of localStorage
       window.__blogCache = data;
     } catch (error) {
       console.error('Error saving posts to cache:', error);

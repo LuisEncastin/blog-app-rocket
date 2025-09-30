@@ -20,7 +20,7 @@ function App() {
   const [error, setError] = useState(null);
   const isOnline = useOnlineStatus();
 
-  // Cargar posts al iniciar
+  // Load posts in the first loading
   useEffect(() => {
     loadPosts();
   }, [isOnline]);
@@ -31,14 +31,14 @@ function App() {
 
     try {
       if (isOnline) {
-        // Intentar cargar desde la API
+        // Try loading from API
         const data = await apiService.getAllPosts();
         setPosts(data);
         setFilteredPosts(data);
-        // Guardar en caché
+        // Store in caché
         offlineStorage.savePosts(data);
       } else {
-        // Cargar desde caché
+        // Load from caché
         const cachedPosts = offlineStorage.getPosts();
         if (cachedPosts) {
           setPosts(cachedPosts);
@@ -49,7 +49,7 @@ function App() {
       }
     } catch (err) {
       console.error('Error loading posts:', err);
-      // Si falla la carga online, intentar con caché
+      // If online load fails, try with cache
       if (!isOnline) {
         const cachedPosts = offlineStorage.getPosts();
         if (cachedPosts) {
@@ -63,7 +63,7 @@ function App() {
     }
   };
 
-  // Buscar posts
+  // Load posts
   useEffect(() => {
     if (!searchTerm.trim()) {
       setFilteredPosts(posts);
@@ -100,7 +100,7 @@ function App() {
       const newPost = await apiService.createPost(postData);
       setPosts(prev => [newPost, ...prev]);
       setShowForm(false);
-      // Actualizar caché
+      // Update caché
       offlineStorage.savePosts([newPost, ...posts]);
     } catch (err) {
       console.error('Error creating post:', err);
