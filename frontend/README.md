@@ -1,36 +1,40 @@
 # Frontend - Blog Application
 
-Aplicación web de blog desarrollada con React, Vite y Tailwind CSS.
+Web blog application developed with **React**, **Vite**, and **Tailwind CSS**.
 
-## 🛠️ Stack Tecnológico
+-----
 
-- **React** 18.2+ - Biblioteca de UI
-- **Vite** - Build tool y dev server
-- **Tailwind CSS** - Framework CSS utility-first
-- **Lucide React** - Iconos
-- **JavaScript (ES6+)** - Lenguaje de programación
+## 🛠️ Tech Stack
 
-## 📁 Estructura del Proyecto
+  - **React** 18.2+ - UI Library
+  - **Vite** - Build tool and dev server
+  - **Tailwind CSS** - Utility-first CSS framework
+  - **Lucide React** - Icons
+  - **JavaScript (ES6+)** - Programming language
+
+-----
+
+## 📁 Project Structure
 
 ```
 frontend/
 ├── src/
 │   ├── components/
-│   │   ├── Header.jsx           # Encabezado de la app
-│   │   ├── SearchBar.jsx        # Barra de búsqueda
-│   │   ├── ConnectionStatus.jsx # Estado de conexión
-│   │   ├── PostList.jsx         # Lista de entradas
-│   │   ├── PostCard.jsx         # Tarjeta de entrada
-│   │   ├── PostDetail.jsx       # Detalle de entrada
-│   │   └── PostForm.jsx         # Formulario nueva entrada
+│   │   ├── Header.jsx           # App Header
+│   │   ├── SearchBar.jsx        # Search Bar
+│   │   ├── ConnectionStatus.jsx # Connection Status
+│   │   ├── PostList.jsx         # Post List
+│   │   ├── PostCard.jsx         # Post Card
+│   │   ├── PostDetail.jsx       # Post Detail
+│   │   └── PostForm.jsx         # New Post Form
 │   ├── services/
-│   │   ├── api.js               # Cliente API
-│   │   └── offlineStorage.js   # Gestión de caché
+│   │   ├── api.js               # API Client
+│   │   └── offlineStorage.js   # Cache Management
 │   ├── hooks/
-│   │   └── useOnlineStatus.js  # Hook estado de conexión
-│   ├── App.jsx                  # Componente principal
-│   ├── main.jsx                 # Punto de entrada
-│   └── index.css                # Estilos globales
+│   │   └── useOnlineStatus.js  # Connection Status Hook
+│   ├── App.jsx                  # Main Component
+│   ├── main.jsx                 # Entry Point
+│   └── index.css                # Global Styles
 ├── public/
 ├── index.html
 ├── vite.config.js
@@ -41,150 +45,193 @@ frontend/
 └── README.md
 ```
 
-## 🚀 Inicio Rápido
+-----
 
-### Con Docker
+## 🚀 Quick Start
+
+### With Docker
+
 ```bash
-# Desde la raíz del proyecto
+# From the project root
 docker-compose up frontend
 ```
 
-### Sin Docker
+### Without Docker
+
 ```bash
 cd frontend
 npm install
 cp .env.example .env
-# Configurar .env
+# Configure .env
 npm run dev
 ```
 
-La aplicación estará disponible en http://localhost:5173
+The application will be available at http://localhost:5173
 
-## ✨ Características
+-----
 
-### 📝 Gestión de Entradas
-- **Crear** nuevas entradas con título, autor y contenido
-- **Listar** todas las entradas con preview de 70 caracteres
-- **Ver detalle** completo de cada entrada
-- **Búsqueda** por título, contenido o autor
+## ✨ Features
 
-### 🌐 Modo Offline
-- Detección automática del estado de conexión
-- Caché de entradas descargadas previamente
-- Visualización de entradas sin conexión
-- Bloqueo de creación de entradas offline
-- Notificación de estado de conexión
+### 📝 Post Management
 
-### 🎨 Interfaz de Usuario
-- Diseño responsive (móvil, tablet, desktop)
-- Animaciones y transiciones suaves
-- Feedback visual para todas las acciones
-- Estados de carga y error
+  - **Create** new posts with title, author, and content
+  - **List** all posts with a 70-character preview
+  - **View full detail** of each post
+  - **Search** by title, content, or author
 
-## 🔧 Componentes
+### 🌐 Offline Mode
+
+  - Automatic detection of connection status
+  - Cache of previously downloaded posts
+  - Viewing posts without connection
+  - Blocking post creation while offline
+  - Connection status notification
+
+### 🎨 User Interface
+
+  - Responsive design (mobile, tablet, desktop)
+  - Smooth animations and transitions
+  - Visual feedback for all actions
+  - Loading and error states
+
+-----
+
+## 🔧 Components
 
 ### Header
-Encabezado principal de la aplicación con logo y título.
+
+Main application header with logo and title.
 
 ### SearchBar
-Barra de búsqueda en tiempo real con:
-- Filtrado instantáneo
-- Botón para limpiar búsqueda
-- Indicador de resultados
+
+Real-time search bar with:
+
+  - Instant filtering
+  - Button to clear search
+  - Results indicator
 
 ### ConnectionStatus
-Muestra un banner cuando no hay conexión a internet.
+
+Displays a banner when there is no internet connection.
 
 ### PostList
-Lista de entradas en formato de grid con:
-- Vista de tarjetas (cards)
-- Estado de carga con spinner
-- Mensaje cuando no hay resultados
+
+List of posts in a grid format with:
+
+  - Card view
+  - Loading state with spinner
+  - Message when there are no results
 
 ### PostCard
-Tarjeta individual de entrada mostrando:
-- Título
-- Autor
-- Fecha de publicación
-- Preview del contenido (70 caracteres)
-- Efecto hover
+
+Individual post card showing:
+
+  - Title
+  - Author
+  - Publication date
+  - Content preview (70 characters)
+  - Hover effect
 
 ### PostDetail
-Vista completa de una entrada con:
-- Título completo
-- Información del autor
-- Fecha y hora de publicación
-- Contenido completo
-- Botón para volver al listado
+
+Full view of a post with:
+
+  - Full title
+  - Author information
+  - Publication date and time
+  - Full content
+  - Button to return to the list
 
 ### PostForm
-Formulario para crear nuevas entradas con:
-- Validación de campos obligatorios
-- Mensajes de error
-- Deshabilitado en modo offline
+
+Form for creating new posts with:
+
+  - Validation of required fields
+  - Error messages
+  - Disabled in offline mode
+
+-----
 
 ## 🎣 Custom Hooks
 
 ### useOnlineStatus
-Hook que detecta y monitorea el estado de conexión a internet.
+
+Hook that detects and monitors the internet connection status.
 
 ```javascript
 const isOnline = useOnlineStatus();
 ```
 
-## 🔌 Servicios
+-----
+
+## 🔌 Services
 
 ### API Service
-Cliente para comunicarse con el backend:
-- `getAllPosts()` - Obtener todas las entradas
-- `getPostById(id)` - Obtener una entrada
-- `searchPosts(query)` - Buscar entradas
-- `createPost(data)` - Crear nueva entrada
-- `updatePost(id, data)` - Actualizar entrada
-- `deletePost(id)` - Eliminar entrada
+
+Client for communicating with the backend:
+
+  - `getAllPosts()` - Get all posts
+  - `getPostById(id)` - Get one post
+  - `searchPosts(query)` - Search posts
+  - `createPost(data)` - Create new post
+  - `updatePost(id, data)` - Update post
+  - `deletePost(id)` - Delete post
 
 ### Offline Storage
-Gestión de caché local usando variables en memoria:
-- `savePosts(posts)` - Guardar entradas en caché
-- `getPosts()` - Recuperar entradas del caché
-- `clearCache()` - Limpiar caché
-- `getCacheTimestamp()` - Obtener timestamp del caché
 
-## 🎨 Estilos
+Local cache management using in-memory variables:
+
+  - `savePosts(posts)` - Save posts to cache
+  - `getPosts()` - Retrieve posts from cache
+  - `clearCache()` - Clear cache
+  - `getCacheTimestamp()` - Get cache timestamp
+
+-----
+
+## 🎨 Styles
 
 ### Tailwind CSS
-Clases utility-first para un desarrollo rápido:
+
+Utility-first classes for rapid development:
+
 ```jsx
 <button className="btn-primary">
-  Botón Primario
+  Primary Button
 </button>
 ```
 
-### Clases Personalizadas
-- `.btn-primary` - Botón principal
-- `.btn-secondary` - Botón secundario
-- `.card` - Tarjeta de contenido
-- `.input-field` - Campo de entrada
+### Custom Classes
 
-## ⚙️ Variables de Entorno
+  - `.btn-primary` - Primary button
+  - `.btn-secondary` - Secondary button
+  - `.card` - Content card
+  - `.input-field` - Input field
 
-| Variable | Descripción | Ejemplo |
+-----
+
+## ⚙️ Environment Variables
+
+| Variable | Description | Example |
 |----------|-------------|---------|
-| VITE_API_URL | URL de la API backend | http://localhost:3000/api |
+| VITE\_API\_URL | Backend API URL | http://localhost:3000/api |
 
-## 📦 Build para Producción
+-----
+
+## 📦 Production Build
 
 ```bash
 npm run build
 ```
 
-Los archivos se generarán en `dist/` y pueden ser servidos con cualquier servidor estático.
+The files will be generated in `dist/` and can be served with any static server.
 
-### Preview del Build
+### Build Preview
 
 ```bash
 npm run preview
 ```
+
+-----
 
 ## 🧪 Testing
 
@@ -192,63 +239,61 @@ npm run preview
 npm test
 ```
 
+-----
+
 ## 📝 Scripts
 
-- `npm run dev` - Inicia servidor de desarrollo
-- `npm run build` - Build de producción
-- `npm run preview` - Preview del build
-- `npm run lint` - Ejecuta ESLint
+  - `npm run dev` - Starts development server
+  - `npm run build` - Production build
+  - `npm run preview` - Build preview
+  - `npm run lint` - Runs ESLint
 
-## 🎯 Características de Accesibilidad
+-----
 
-- Uso de HTML semántico
-- Labels en todos los campos de formulario
-- Contraste de colores adecuado
-- Estados de focus visibles
-- Mensajes de error descriptivos
+## 🎯 Accessibility Features
+
+  - Use of semantic HTML
+  - Labels on all form fields
+  - Adequate color contrast
+  - Visible focus states
+  - Descriptive error messages
+
+-----
 
 ## 📱 Responsive Design
 
-- **Mobile First** - Diseñado primero para móviles
-- **Breakpoints:**
-  - `sm:` 640px
-  - `md:` 768px
-  - `lg:` 1024px
-  - `xl:` 1280px
+  - **Mobile First** - Designed for mobile first
+  - **Breakpoints:**
+      - `sm:` 640px
+      - `md:` 768px
+      - `lg:` 1024px
+      - `xl:` 1280px
 
-## 🔍 Búsqueda
+-----
 
-La búsqueda filtra entradas en tiempo real por:
-- Título
-- Contenido
-- Autor
+## 🔍 Search
 
-La búsqueda es **case-insensitive** y funciona tanto online como offline.
+The search filters posts in real-time by:
 
-## 💾 Caché Local
+  - Title
+  - Content
+  - Author
 
-El sistema de caché:
-- Guarda automáticamente todas las entradas descargadas
-- Permite acceso offline a contenido previamente visto
-- Se actualiza cada vez que hay conexión
-- Usa variables en memoria (no localStorage)
+The search is **case-insensitive** and works both online and offline.
 
-## 🐛 Troubleshooting
+-----
 
-### La aplicación no se conecta al backend
-- Verifica que el backend esté corriendo
-- Revisa la variable `VITE_API_URL` en `.env`
-- Verifica que no haya problemas de CORS
+## 💾 Local Cache
 
-### Los estilos de Tailwind no se aplican
-- Asegúrate de que `index.css` esté importado en `main.jsx`
-- Verifica que la configuración de Tailwind sea correcta
-- Ejecuta `npm run dev` de nuevo
+The caching system:
 
-### El modo offline no funciona
-- El navegador debe soportar los eventos `online` y `offline`
-- Verifica la consola del navegador para errores
+  - Automatically saves all downloaded posts
+  - Allows offline access to previously viewed content
+  - Updates every time there is a connection
+  - Uses in-memory variables (not localStorage)
 
-## 📄 Licencia
+-----
+
+## 📄 License
 
 MIT
